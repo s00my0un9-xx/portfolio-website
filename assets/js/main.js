@@ -58,3 +58,11 @@
   });
 })();
 
+
+gsap.timeline()
+  .fromTo(".hero-cutout", { opacity: 0 }, { opacity: 1, duration: .8, delay: 3, ease: "power2.out" })
+  .fromTo(".site-header",
+    { y: -80, opacity: 0, background: "transparent" },
+    { y: 0, opacity: 1, background: "var(--mint)", duration: .8, ease: "power2.out" },
+    "-=0.5");
+

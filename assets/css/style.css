@@ -1,4 +1,4 @@
-/* ===== Design tokens ===== */
+/* Design tokens */
 :root {
   --mint: #e1fcf7;
   --mintPoint: #e1fcf7;
@@ -62,14 +62,15 @@ a {
   padding: 0 var(--px);
 }
 
-/* ===== Header ===== */
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--mint);
   padding: var(--py) 0;
-  opacity: 1;
+  background:  transparent;
+  opacity: 0;
+  transition: background 0.5s ease;
 }
 
 .header-inner {
@@ -227,12 +228,13 @@ a {
   background: rgba(42, 32, 25, 0.08);
 }
 
-/* ===== Hero ===== */
+/* Hero */
 .hero {
-  min-height: 60vh;
-  background: var(--mint);
   position: relative;
-  display: grid;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;
   place-items: center;
   overflow: hidden;
 }
@@ -240,9 +242,54 @@ a {
 .hero-content {
   position: relative;
   width: 100%;
+  height: 100vh;
 }
 
-/* ===== Sections (placeholders) ===== */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-cutout {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-cutout__mint {
+  fill: var(--mint);
+}
+
+.hero-cutout__text {
+  font-family: Rama Gothic M, Pretendard, Inter, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Responsive-ish sizing inside the SVG viewBox */
+.hero-cutout__text text {
+  font-size: 320px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Sections (placeholders) */
 .section {
   padding: 90px 0;
   background: var(--mint);
@@ -266,7 +313,7 @@ a {
   line-height: 1.7;
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 1024px) {
   :root {
     --px: 24px;
@@ -278,6 +325,10 @@ a {
 
   .hero {
     min-height: 48vh;
+  }
+
+  .hero-cutout__text text {
+    font-size: 320px;
   }
 }
 
@@ -320,6 +371,10 @@ a {
 
   .hero {
     min-height: 42vh;
+  }
+
+  .hero-cutout__text text {
+    font-size: 320px;
   }
 }
 
