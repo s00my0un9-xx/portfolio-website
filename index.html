@@ -1,83 +1,104 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOOMYOUNG Portfolio</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOOMYOUNG. Web Portfolio</title>
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-  </head>
-  <body>
-    <a class="skip" href="#main">본문 바로가기</a>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css" />
+  
 
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="brand" aria-label="copyright">
-          ⓒ SOOMYOUNG. All Rights Reserved
-        </div>
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-        <nav class="gnb" aria-label="primary">
-          <a href="#home" class="gnb-link is-active">Home</a>
-          <a href="#about" class="gnb-link">About</a>
-          <a href="#project" class="gnb-link">Project</a>
-          <a href="#skill" class="gnb-link">Skill</a>
-          <a href="#contact" class="gnb-link">Contact</a>
-        </nav>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-        <a class="header-cta" href="#contact">CONTACT</a>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="site-header" data-animate="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="SOOMYOUNG Web Portfolio">
+        SOOMYOUNG. Web Portfolio
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list" id="primaryNav">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#project">Project</a></li>
+          <li><a class="nav-link" href="#skill">Skill</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cta" href="#contact">CONTACT</a>
+        <button class="hamburger" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false">
+          <span class="hamburger-lines" aria-hidden="true"></span>
+        </button>
       </div>
-    </header>
+    </div>
 
-    <main id="main">
-      <section class="hero" id="home" aria-label="Hero">
-        <div class="hero-grid" aria-hidden="true"></div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a class="mobile-link" href="#home">Home</a>
+        <a class="mobile-link" href="#about">About</a>
+        <a class="mobile-link" href="#project">Project</a>
+        <a class="mobile-link" href="#skill">Skill</a>
+        <a class="mobile-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
-        <div class="hero-inner">
-          <div class="hero-media hero-media--top" data-aos="fade-left" data-aos-duration="800">
-            <div class="media-card media-card--olive" role="img" aria-label="프로젝트 미리보기 이미지 영역">
-              <div class="mock mock--phone"></div>
-              <div class="mock mock--phone mock--phone2"></div>
-            </div>
-          </div>
+  <main id="main">
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="container hero-content"></div>
+    </section>
 
-          <div class="hero-copy">
-            <p class="hero-title" aria-label="보이는 디자인을 넘어서">
-              <span class="sr-only">보이는 디자인을 넘어서</span>
-              <span class="split" data-split>보이는 디자인을 넘어서</span>
-            </p>
+    <section class="section placeholder" id="about" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-desc">콘텐츠 영역은 다음 단계에서 확장 가능합니다.</p>
+      </div>
+    </section>
 
-            <p class="hero-title hero-title--second" aria-label="사용자의 흐름을 설계합니다">
-              <span class="sr-only">사용자의 흐름을 설계합니다</span>
-              <span class="split" data-split>사용자의 흐름을 설계합니다</span>
-            </p>
-          </div>
+    <section class="section placeholder" id="project" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Project</h2>
+        <p class="section-desc">Swiper 섹션을 여기에 추가할 수 있습니다.</p>
+      </div>
+    </section>
 
-          <div class="hero-media hero-media--bottom" data-aos="fade-right" data-aos-duration="800">
-            <div class="media-card media-card--teal" role="img" aria-label="프로젝트 미리보기 이미지 영역">
-              <div class="mock mock--wide"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <section class="section placeholder" id="skill" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Skill</h2>
+        <p class="section-desc">AOS 애니메이션 예시가 적용되어 있습니다.</p>
+      </div>
+    </section>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <!-- Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <section class="section placeholder" id="contact" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">CTA 버튼이 이 섹션으로 이동합니다.</p>
+      </div>
+    </section>
+  </main>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
