@@ -570,6 +570,191 @@ a {
   border-color: var(--mintPoint);
 }
 
+/* project section */
+.project {
+  position: relative;
+  padding: 160px 0;
+  background: var(--darkChoco); /* 섹션 배경색 */
+  overflow: hidden;
+}
+
+.project-title {
+  color: var(--mint);
+  font-family: "Rama Gothic M";
+  font-size: 200px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.project-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 카드 묶음 */
+.project-cards {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-origin: center bottom;
+  transition: transform 0.6s cubic-bezier(0.4, 0.3, 0, 1), opacity 0.6s cubic-bezier(0.4, 0.3, 0, 1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  transition: opacity 0.6s ease;
+}
+
+.project-card:hover .project-card-overlay {
+  opacity: 0;
+}
+
+/* 카드 회전값 */
+.project-card:nth-child(1) { transform: rotate(12deg); }
+.project-card:nth-child(2) { transform: rotate(6deg); }
+.project-card:nth-child(3) { transform: rotate(-6deg); }
+.project-card:nth-child(4) { transform: rotate(-12deg); }
+
+.project-card:hover {
+  transform: rotate(0deg);
+}
+
+/* 프로젝트 정보 */
+.project-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+  color: var(--darkChoco);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 2;
+}
+
+.project-cards:hover ~ .project-info {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.project-info-num {
+  font-family: "Google Sans";
+  font-size: 13px;
+  padding-bottom: 30px;
+  color: var(--mint);
+}
+
+.project-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-info-title {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--mint);
+}
+
+.project-info-desc {
+  font-family: "Pretendard";
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+}
+
+.visit-btn {
+  font-family: "Google Sans";
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: var(--mint);
+  color: var(--darkChoco);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+  background: var(--mintPoint);
+  color: var(--mint);
+}
+
+.project-info-skill {
+  font-family: "Google Sans";
+  font-size: 12px;
+  color: var(--mint);
+  padding: 6px 14px;
+  border: 1px solid var(--mint);
+  border-radius: 15px;
+  background: transparent;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .project-title {
+    font-size: 140px;
+  }
+  .project-card {
+    width: 320px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 990px) {
+  .project-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .project-card {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    transform: none; /* 회전 제거 */
+  }
+  .project-info {
+    position: static;
+    transform: none;
+    opacity: 1;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-title {
+    font-size: 80px;
+  }
+  .project-card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
 @media (max-width: 1300px) {
   .about-content {
     width: 100%;
