@@ -10,14 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css" />
 
 
   <!-- Libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
+  <link rel="stylesheet" href="./assets/css/font.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -33,16 +32,26 @@
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav-list" id="primaryNav">
-          <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#project">Project</a></li>
-          <li><a class="nav-link" href="#skill">Skill</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li>
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#project">Project</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#skill">Skill</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a class="cta" href="#contact">CONTACT</a>
+        <a class="header-cta" href="#contact">CONTACT</a>
         <button class="hamburger" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false">
           <span class="hamburger-lines" aria-hidden="true"></span>
         </button>
@@ -70,15 +79,16 @@
           <source src="./assets/video/hero.mp4" type="video/mp4">
         </video>
         <!-- text video Mint overlay -->
-        <svg class="hero-cutout" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <svg class="hero-cutout" viewBox="0 0 1592 694" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <mask id="heroTextCutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
               <!-- 흰색 영역(민트색이 보이게 만듦) -->
               <rect x="0" y="0" width="1600" height="900" fill="white" />
               <!-- 글자 부분 검은색(투명하게) -->
               <g class="hero-cutout__text" fill="black" text-anchor="middle">
-                <text x="500" y="430">DESIGN</text>
-                <text x="800" y="610">EXPERIENCE</text>
+                <text x="34%" y="46%" text-anchor="middle">DESIGN</text>
+                <text x="68%" y="48%"" text-anchor="middle">ㅡ</text>
+                <text x="54%" y="86%" text-anchor="middle">EXPERIENCE</text>
               </g>
             </mask>
           </defs>
@@ -90,14 +100,56 @@
           <h2>DESIGNER</h2>
           <h2>EXPERIENCE</h2>
         </div>
-      </div>
+
+        <!-- scroll down -->
+        <div class="scroll-down">
+          <a href="#about">
+            <img src="/assets/images/scroll-down.svg" alt="">
+          </a>
+        </div>
     </section>
 
     <!-- about section -->
-    <section class="section placeholder" id="about" data-aos="fade-up">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <p class="section-desc">콘텐츠 영역은 다음 단계에서 확장 가능합니다.</p>
+    <section class="about" id="about" aria-label="About">
+      <div clasgit lfs installs="container about-inner">
+        <div class="about-bg" aria-hidden="true">
+          <div class="about-bg-text">
+            <span class="about-bg-base">ABOUT</span>
+            <span class="about-bg-fill">ABOUT</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-img-area" aria-label="About image area">
+            <div class="about-img-shadow" aria-hidden="true"></div>
+            <div class="about-img-box" aria-hidden="true">
+              <img src="./assets/images/dog.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="about-text-area">
+            <div class="about-text">
+              <h2 class="about-title">
+                <span class="about-title-line">보이는 디자인을 넘어서,</span>
+                <span class="about-title-line">사용자의 <span class="about-flow">FLOW</span> 를 설계합니다</span>
+              </h2>
+              <p class="about-desc">
+                사용자가 멈추는 순간에는 이유가 있다고 생각합니다.<br>
+                그 이유를 찾고, 무엇이 흐름을 끊었는지 끝까지 파고듭니다.<br>
+                작은 디테일의 차이가 경험을 바꾼다고 믿습니다.<br>
+                흐름을 설계하는 퍼블리셔 주수명입니다.
+              </p>
+            </div>
+
+            <a class="about-view-more" href="#project" aria-label="View more about projects">
+              <span class="about-view-more__text">VEIW MORE</span>
+              <span class="about-view-more__arrow">
+                <span class="arrow-line"></span>
+                <span class="arrow-head"></span>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
