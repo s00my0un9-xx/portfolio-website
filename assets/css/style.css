@@ -284,6 +284,7 @@ a {
 
 .hero-cutout__text text {
   font-size: 340px;
+  transform: translate(0, 0);
 }
 
 .sr-only {
@@ -365,7 +366,7 @@ a {
 
 .about-bg-text {
   position: absolute;
-  top: -10%;
+  top: 8%;
   left: 53%;
   font-family: "Rama Gothic M";
   font-weight: 700;
@@ -498,7 +499,7 @@ a {
 .about-desc {
   margin: 0;
   font-family: "Pretendard";
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 1.9;
   color: rgba(42, 32, 25, 0.92);
@@ -553,18 +554,34 @@ a {
   transition: all 0.2s ease-out;
 }
 
-.about-view-more:hover  .about-view-more__text {
+.about-view-more:hover .about-view-more__text {
   color: var(--mintPoint);
   transition: all 0.2s ease-out;
 }
+
 .about-view-more:hover .arrow-line {
   width: 25px;
   background-color: var(--mintPoint);
 }
+
 .about-view-more:hover .arrow-head {
   right: -15%;
   top: 35%;
   border-color: var(--mintPoint);
+}
+
+@media (max-width: 1300px) {
+  .about-content {
+    width: 100%;
+  }
+
+  .hero-cutout__text text {
+    font-size: 260px;
+  }
+
+  .hero-cutout__text text:nth-child(1) {
+    transform: translate(-20px, 10px);
+  }
 }
 
 @media (max-width: 1100px) {

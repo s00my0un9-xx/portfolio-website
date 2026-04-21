@@ -85,7 +85,7 @@
 gsap.timeline()
   .fromTo(".hero-cutout",
     { opacity: 0 },
-    { opacity: 1, duration: .8, delay: 3, ease: "power2.out" }
+    { opacity: 1, duration: 5, delay: 1.5, ease: "power2.out" }
   )
   .fromTo(".site-header",
     { y: -80, opacity: 0, background: "transparent" },
