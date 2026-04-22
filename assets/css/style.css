@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -72,8 +73,11 @@ a {
   z-index: 10;
   padding: var(--py) 0;
   background: transparent;
-  /* opacity: 0; */
-  transition: background 0.5s ease;
+  transition: transform 0.4s ease, background 0.5s ease;
+}
+
+.site-header.hide {
+  transform: translateY(-100%) !important;
 }
 
 .header-inner {

@@ -1,3 +1,50 @@
+$(function () {
+  const $window = $(window);
+  const $header = $('.site-header');
+  let lastScrollTop = 0;
+  const delta = 5;
+
+  $window.on('scroll', function () {
+    const nowScrollTop = $(this).scrollTop();
+
+    if ($('.hamburger').hasClass('is-open')) return;
+
+    if (Math.abs(lastScrollTop - nowScrollTop) <= delta) return;
+
+    if (nowScrollTop > lastScrollTop && nowScrollTop > 100) {
+      // 내릴 때: 헤더 숨김
+      $header.addClass('hide');
+    } else {
+      // 올릴 때: 헤더 나타남
+      $header.removeClass('hide');
+    }
+
+    lastScrollTop = nowScrollTop;
+  });
+});
+
+// header page scroll
+const tl = gsap.timeline({
+  onComplete: function () {
+    document.documentElement.style.overflow = "auto";
+  }
+});
+
+tl.fromTo(".hero-cutout",
+  { opacity: 0 },
+  { opacity: 1, duration: 5, delay: 1.5, ease: "power2.out" }
+)
+  .fromTo(".site-header",
+    { y: -80, opacity: 0, background: "transparent" },
+    { y: 0, opacity: 1, background: "var(--mint)", duration: .8, ease: "power2.out" },
+    "-=0.5"
+  )
+  .fromTo(".scroll-down",
+    { opacity: 0, y: -10 },
+    { opacity: 1, y: 0, duration: .6, ease: "power2.out" },
+    "-=0.3"
+  );
+
 /* hamburger menu */
 (function () {
   const $win = $(window);
@@ -52,6 +99,7 @@
     });
   }
 
+  // about section
   function initAbout() {
     const about = document.getElementById("about");
     if (!about) return;
@@ -59,7 +107,7 @@
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const INVIEW_RATIO = 2 / 3;
 
-    // in-view toggle (rotate image, FLOW highlight)
+    // rotate image, FLOW highlight
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -82,32 +130,7 @@
 })();
 
 
-gsap.timeline()
-  .fromTo(".hero-cutout",
-    { opacity: 0 },
-    { opacity: 1, duration: 5, delay: 1.5, ease: "power2.out" }
-  )
-  .fromTo(".site-header",
-    { y: -80, opacity: 0, background: "transparent" },
-    { y: 0, opacity: 1, background: "var(--mint)", duration: .8, ease: "power2.out" },
-    "-=0.5"
-  )
-  .fromTo(".scroll-down",
-    { opacity: 0, y: -10 },
-    { opacity: 1, y: 0, duration: .6, ease: "power2.out" },
-    "-=0.3"
-  );
-
-gsap.to(".scroll-down", {
-  y: 6,
-  repeat: -1,
-  yoyo: true,
-  duration: .6,
-  ease: "power1.inOut"
-});
-
 // project card
-// 공통: 초기 회전 세팅 (모든 해상도)
 $(".project-card").each(function () {
   const $card = $(this);
 
@@ -119,7 +142,7 @@ $(".project-card").each(function () {
 });
 
 
-// ✅ PC (hover)
+// PC project slide
 if (window.innerWidth > 990) {
   $(".project-card").hover(
     function () {
@@ -150,7 +173,7 @@ if (window.innerWidth > 990) {
 }
 
 
-// ✅ 모바일 (슬라이드 중앙 감지)
+// mobile project slide
 if (window.innerWidth <= 990) {
   const $scroll = $(".project-scroll");
   const $cards = $(".project-card");
