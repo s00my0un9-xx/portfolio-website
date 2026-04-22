@@ -2,22 +2,22 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOOMYOUNG. Web Portfolio</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
   <!-- Libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-  <link rel="stylesheet" href="./assets/css/font.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/font.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -87,7 +87,7 @@
               <!-- 글자 부분 검은색(투명하게) -->
               <g class="hero-cutout__text" fill="black" text-anchor="middle">
                 <text x="34%" y="46%" text-anchor="middle">DESIGN</text>
-                <text x="68%" y="48%"" text-anchor="middle" class="hero-cutout_line">ㅡ</text>
+                <text x="68%" y="48%" text-anchor="middle" class="hero-cutout_line">ㅡ</text>
                 <text x="54%" y="86%" text-anchor="middle">EXPERIENCE</text>
               </g>
             </mask>
@@ -95,23 +95,23 @@
           <rect class="hero-cutout__mint" x="0" y="0" width="1600" height="900" mask="url(#heroTextCutout)" />
         </svg>
 
-        <!-- Accessible text (not visually rendered) -->
-        <div class="sr-only" aria-label="Hero title">
-          <h2>DESIGNER</h2>
-          <h2>EXPERIENCE</h2>
+        <div class="sr-only">
+          <h1>DESIGNER</h1>
+          <h1>EXPERIENCE</h1>
         </div>
 
         <!-- scroll down -->
         <div class="scroll-down">
           <a href="#about">
-            <img src="/assets/images/scroll-down.svg" alt="">
+            <img src="/assets/images/scroll-down.svg" alt="스크롤 다운">
           </a>
         </div>
+      </div>
     </section>
 
     <!-- about section -->
     <section class="about" id="about" aria-label="About">
-      <div clasgit lfs installs="container about-inner">
+      <div class="container about-inner">
         <div class="about-bg" aria-hidden="true">
           <div class="about-bg-text">
             <span class="about-bg-base">ABOUT</span>
@@ -120,7 +120,7 @@
         </div>
 
         <div class="about-content">
-          <div class="about-img-area" aria-label="About image area">
+          <div class="about-img-area">
             <div class="about-img-shadow" aria-hidden="true"></div>
             <div class="about-img-box" aria-hidden="true">
               <img src="./assets/images/dog.jpg" alt="">
@@ -142,7 +142,7 @@
             </div>
 
             <a class="about-view-more" href="#project" aria-label="View more about projects">
-              <span class="about-view-more__text">VEIW MORE</span>
+              <span class="about-view-more__text">VIEW MORE</span>
               <span class="about-view-more__arrow">
                 <span class="arrow-line"></span>
                 <span class="arrow-head"></span>
@@ -156,52 +156,38 @@
     <section class="project" id="project" aria-label="Projects">
       <div class="container project-inner">
         <h2 class="project-title">SELECTED THE PROJECTS</h2>
-    
+
         <div class="project-content">
-          <!-- 카드 묶음 -->
-          <div class="project-cards">
-            <a href="#" class="project-card">
-              <img src="./assets/images/project1.jpg" alt="Project 1">
-              <div class="project-card-overlay"></div>
-            </a>
-            <a href="#" class="project-card">
-              <img src="./assets/images/project2.jpg" alt="Project 2">
-              <div class="project-card-overlay"></div>
-            </a>
-            <a href="#" class="project-card">
-              <img src="./assets/images/project3.jpg" alt="Project 3">
-              <div class="project-card-overlay"></div>
-            </a>
-            <a href="#" class="project-card">
-              <img src="./assets/images/project4.jpg" alt="Project 4">
-              <div class="project-card-overlay"></div>
-            </a>
-          </div>
-    
-          <!-- 프로젝트 정보 -->
-          <div class="project-info">
-            <div class="project-info-num">01</div>
-            <div class="project-info-body">
-              <div class="project-info-text">
-                <h3 class="project-info-title">서울명치과</h3>
-                <p class="project-info-desc">PROJECT DESC</p>
-              </div>
-              <div class="project-info-btns">
-                <button class="visit-btn">VEIW WEBSITE</button>
-                <button class="visit-btn">VEIW DESIGN</button>
-              </div>
-              <div class="project-info-skills">
-                <span class="project-info-skill">J-QUERY</span>
-                <span class="project-info-skill">JAVASCRIPT</span>
-                <span class="project-info-skill">AOS</span>
-              </div>
+          <div class="project-scroll">
+            <div class="project-cards">
+              <a href="/project-detail.html" class="project-card" data-rotate="-12" data-x="40" data-y="20">
+                <img src="./assets/images/PROJECT_01_서울명치과.png" alt="서울명치과 랜딩페이지">
+                <div class="project-card-overlay"></div>
+                <span class="project-card-cta">View Details ➝</span>
+              </a>
+              <a href="/project-detail.html" class="project-card" data-rotate="-6" data-x="40" data-y="-40">
+                <img src="./assets/images/PROJECT_02_Beakyang.png" alt="백양 프로젝트">
+                <div class="project-card-overlay"></div>
+                <span class="project-card-cta">View Details ➝</span>
+              </a>
+              <a href="/project-detail.html" class="project-card" data-rotate="6" data-x="40" data-y="-40">
+                <img src="./assets/images/PROJECT_03_Moodle.png" alt="AI 음악 추천 MOODLE 프로젝트">
+                <div class="project-card-overlay"></div>
+                <span class="project-card-cta">View Details ➝</span>
+              </a>
+              <a href="/project-detail.html" class="project-card" data-rotate="12" data-x="40" data-y="20">
+                <img src="./assets/images/PROJECT_04_Happiert.png" alt="Happiert 클론 웹사이트">
+                <div class="project-card-overlay"></div>
+                <span class="project-card-cta">View Details ➝</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
-    
+
+
+
 
     <!-- skill section -->
     <section class="section placeholder" id="skill" data-aos="fade-up">

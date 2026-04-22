@@ -105,3 +105,131 @@ gsap.to(".scroll-down", {
   duration: .6,
   ease: "power1.inOut"
 });
+
+// project card
+// 공통: 초기 회전 세팅 (모든 해상도)
+$(".project-card").each(function () {
+  const $card = $(this);
+
+  gsap.set(this, {
+    rotation: $card.data("rotate"),
+    x: $card.data("x"),
+    y: $card.data("y")
+  });
+});
+
+
+// ✅ PC (hover)
+if (window.innerWidth > 990) {
+  $(".project-card").hover(
+    function () {
+      gsap.to(this, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        scale: 1.05,
+        zIndex: 10,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    },
+    function () {
+      const $card = $(this);
+
+      gsap.to(this, {
+        rotation: $card.data("rotate"),
+        x: $card.data("x"),
+        y: $card.data("y"),
+        scale: 1,
+        zIndex: 1,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    }
+  );
+}
+
+
+// ✅ 모바일 (슬라이드 중앙 감지)
+if (window.innerWidth <= 990) {
+  const $scroll = $(".project-scroll");
+  const $cards = $(".project-card");
+
+  // 초기 위치 세팅 (기울어진 상태 유지)
+  $cards.each(function () {
+    const r = $(this).data("rotate");
+    const x = $(this).data("x");
+    const y = $(this).data("y");
+
+    gsap.set(this, {
+      rotation: r,
+      x: x,
+      y: y
+    });
+  });
+
+  function updateCards() {
+    let center = $scroll.scrollLeft() + $scroll.outerWidth() / 2;
+
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    $cards.each(function () {
+      const $card = $(this);
+
+      const cardCenter =
+        $card.position().left + $card.outerWidth() / 2;
+
+      const distance = Math.abs(center - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = this;
+      }
+    });
+
+    $cards.each(function () {
+      const $card = $(this);
+
+      if (this === closestCard) {
+        $card.addClass("is-active");
+
+        gsap.to(this, {
+          scale: 1.05,
+          rotation: 0,
+          x: 0,
+          y: 0,
+          zIndex: 10,
+          duration: 0.3
+        });
+
+      } else {
+        $card.removeClass("is-active");
+
+        const r = $card.data("rotate");
+        const x = $card.data("x");
+        const y = $card.data("y");
+
+        gsap.to(this, {
+          scale: 1,
+          rotation: r,
+          x: x,
+          y: y,
+          zIndex: 1,
+          duration: 0.3
+        });
+      }
+    });
+  }
+
+  $scroll.on("scroll", updateCards);
+  updateCards();
+}
+
+$(window).on("load", function () {
+  const $scroll = $(".project-scroll");
+  const $first = $(".project-card").first();
+
+  $scroll.scrollLeft($first.position().left);
+  updateCards()
+});
