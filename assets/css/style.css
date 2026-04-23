@@ -322,30 +322,6 @@ a {
   display: block;
 }
 
-/* Sections (placeholders) */
-.section {
-  padding: 90px 0;
-  background: var(--mint);
-}
-
-.placeholder {
-  border-top: 1px solid rgba(42, 32, 25, 0.1);
-}
-
-.section-title {
-  margin: 0 0 14px;
-  font-size: 28px;
-  font-weight: 700;
-  font-family: "Google Sans";
-}
-
-.section-desc {
-  margin: 0;
-  color: rgba(42, 32, 25, 0.75);
-  font-size: 16px;
-  line-height: 1.7;
-}
-
 /* About section */
 .about {
   position: relative;
@@ -371,9 +347,6 @@ a {
   position: absolute;
   top: -10%;
   left: 53%;
-  font-family: "Rama Gothic M";
-  font-weight: 700;
-  font-size: 200px;
   line-height: 0.9;
   opacity: 0.9;
   transform: translateY(-8px);
@@ -581,16 +554,12 @@ a {
 
 .project-title {
   color: var(--mint);
-  font-family: "Rama Gothic M";
-  font-size: 200px;
-  font-weight: 700;
   text-align: center;
   margin-bottom: 120px;
 }
 
 .project-cards {
   display: flex;
-  /* justify-content: center; */
 }
 
 .project-card {
@@ -603,7 +572,6 @@ a {
 .project-card:first-child {
   margin-left: 0;
 }
-
 
 .project-card img {
   width: 100%;
@@ -647,6 +615,129 @@ a {
 .project-card:hover .project-card-cta {
   opacity: 1;
 }
+
+
+/* contact section */
+.contact {
+  width: 100%;
+  background-color: var(--mint);
+}
+
+.contact-content {
+  width: 100%;
+  height: 800px;
+  padding: 100px 0 50px 0;
+  text-align: center;
+  align-content: center;
+}
+
+.contact-link {
+  margin-bottom: 80px;
+}
+
+.contact-link p {
+  font-family: "Google Sans";
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-email {
+  font-family: "Rama Gothic M";
+  font-weight: 700;
+  font-size: 200px;
+  text-decoration: underline;
+  transition: .3s ease;
+}
+
+.contact-email:focus,
+.contact-email:hover {
+  color: var(--mintPoint);
+}
+
+.contact-btns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.contact-btn {
+  width: 254px;
+  height: 64px;
+  display: block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: "Google Sans";
+  font-size: 32px;
+  transition: .2s ease-in;
+  align-content: center;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact-gitHub {
+  background-color: var(--darkChoco);
+  color: var(--mint);
+}
+
+.contact-gitHub:focus,
+.contact-gitHub:hover {
+  font-weight: 600;
+}
+
+.contact-notion {
+  border: 2px solid var(--darkChoco);
+}
+
+.contact-notion:focus,
+.contact-notion:hover {
+  font-weight: 600;
+  border: 4px solid var(--darkChoco);
+}
+
+.contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px;
+  font-family: "Google Sans";
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--darkChoco);
+}
+
+.socials {
+  display: flex;
+  gap: 30px;
+}
+
+.social {
+  display: block;
+  /* transition: .3s ease; */
+
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.social::before {
+  content: "";
+  position: absolute;
+  background-color: var(--darkChoco);
+  height: 2px;
+
+  width: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+}
+
+.social:focus::before,
+.social:hover::before {
+  width: 100%;
+}
+
 
 /* 반응형 */
 @media (prefers-reduced-motion: reduce) {
