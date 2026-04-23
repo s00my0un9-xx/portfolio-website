@@ -12,10 +12,8 @@ $(function () {
     if (Math.abs(lastScrollTop - nowScrollTop) <= delta) return;
 
     if (nowScrollTop > lastScrollTop && nowScrollTop > 100) {
-      // 내릴 때: 헤더 숨김
       $header.addClass('hide');
     } else {
-      // 올릴 때: 헤더 나타남
       $header.removeClass('hide');
     }
 
