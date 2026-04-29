@@ -124,6 +124,7 @@ a {
   outline: none;
   color: var(--mintPoint);
   background: var(--darkChoco);
+  transition: .3s ease;
 }
 
 .header-actions {
@@ -152,6 +153,7 @@ a {
   outline: none;
   background: var(--mintPoint);
   color: var(--darkChoco);
+  transition: .3s ease;
 }
 
 /* mobile header */
@@ -497,7 +499,7 @@ a {
   border-radius: 8px;
 }
 
-.about-view-more__arrow {
+.view-more__arrow {
   position: relative;
   display: inline-block;
   width: 20px;
@@ -563,10 +565,13 @@ a {
 }
 
 .project-card {
+  width: 400px;
+  height: 600px;
   margin-left: -80px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  display: block;
 }
 
 .project-card:first-child {
@@ -586,21 +591,83 @@ a {
   background: rgba(225, 252, 247, .5);
 }
 
-.project-card-cta {
+.project-info {
+  width: 100%;
   position: absolute;
-  top: 60%;
+  top: 93%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  transition: opacity 0.6s ease, background 0.3s ease, color 0.3s ease;
+  color: var(--white);
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.project-info-num {
+  font-family: "Google Sans";
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.project-info-title {
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.project-info-desc {
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.project-view-more {
+  display: block;
+}
+
+.project-card-cta {
   font-family: "Google Sans";
   font-weight: 700;
   font-size: 16px;
   padding: 8px 14px;
+  border: none;
   border-radius: 30px;
   background: var(--mint);
   color: var(--darkChoco);
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity 0.6s ease, background 0.3s ease, color 0.3s ease;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.project-view-more__arrow {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.project-view-more__arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info-skills {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.project-info-skills li {
+  color: var(--mint);
+  font-family: "Google Sans";
+  font-size: 12px;
+  font-weight: 300;
+  border: 1px solid var(--mint);
+  border-radius: 15px;
+  padding: 6px 14px;
 }
 
 .project-card:hover {
@@ -609,11 +676,17 @@ a {
 }
 
 .project-card:hover .project-card-overlay {
-  background: none;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 50%);
 }
 
-.project-card:hover .project-card-cta {
+.project-card:hover .project-info {
   opacity: 1;
+}
+
+.project-card-cta:hover {
+  background-color: var(--mintShadow);
 }
 
 
@@ -753,7 +826,7 @@ a {
 
   .about-img-box,
   .about-flow::before,
-  .about-view-more__arrow::before {
+  .view-more__arrow::before {
     transition: none !important;
   }
 }
